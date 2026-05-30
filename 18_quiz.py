@@ -6,7 +6,7 @@ questions = [
 ]
 
 score = 0
-print("Qusiz Game")
+print("Quiz Game")
 
 for number, (question, options, correct) in enumerate(questions, 1):
     print(f"{number}. {question}")
