@@ -1,4 +1,5 @@
 #class variables are defined within a class but outside of any instance methods. They are shared among all instances of the class, meaning that if you change the value of a class variable, it will affect all instances that reference that variable.
+import numpy
 class car:
     wheels = 4  # This is a class variable
     num_of_cars = 0  # This is a class variable

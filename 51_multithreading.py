@@ -28,8 +28,10 @@ chore3.start()
 
 # In this example, they are done concurrently, so take out trash is done first, then get mail, and then finally walk the dog. If they were done sequentially, it would have taken 13 seconds (8 + 2 + 3) instead of just 8 seconds, which is the time taken for the longest task (walking the dog).
 
-# chore1.join()  # Wait for walk_dog to finish
+chore1.join()  # Wait for walk_dog to finish
 chore2.join()  # Wait for take_out_trash to finish
 chore3.join()  # Wait for get_mail to finish
+#if a chore is not joined, the main thread may finish before the chore is done, which can lead to unexpected behavior. By joining the threads, we ensure that the main thread waits for all chores to be completed before printing "All chores are done!"
+#joining is just waiting for the thread to finish before moving on to the next line of code. It ensures that the main thread does not exit before the worker threads have completed their tasks. 
 
 print("All chores are done!")
